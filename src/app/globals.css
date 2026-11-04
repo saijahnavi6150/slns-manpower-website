@@ -2269,8 +2269,9 @@ img {
   font-weight: 750;
 }
 
+
 /* =========================================================
-   CLOSING BANNER
+   SERVICES CLOSING BANNER
 ========================================================= */
 
 .services-closing-banner {
@@ -2281,108 +2282,190 @@ img {
 .services-closing-inner {
   position: relative;
   display: grid;
-  grid-template-columns: auto 1.2fr 1px 1fr auto;
+  grid-template-columns: 60px minmax(0, 1.2fr) 1px minmax(220px, 0.9fr);
   align-items: center;
-  gap: 24px;
-  padding: 29px 32px;
+  gap: 28px;
+  padding: 42px 40px;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 14px;
   background: linear-gradient(
-    110deg,
-    #092d56,
-    #0d4c85 75%,
-    #176bb0
+    115deg,
+    #082b50 0%,
+    #104c7d 55%,
+    #176eaa 100%
   );
-  box-shadow: 0 12px 28px rgba(13, 57, 100, .15);
+  box-shadow: 0 16px 35px rgba(8, 43, 80, 0.16);
 }
+
+/* Decorative circle */
 
 .services-closing-inner::after {
   position: absolute;
   right: -75px;
-  bottom: -150px;
-  width: 300px;
-  height: 300px;
-  border: 1px solid rgba(255,255,255,.12);
+  bottom: -165px;
+  width: 330px;
+  height: 330px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 50%;
   content: "";
   pointer-events: none;
 }
 
+/* Icon */
+
 .services-closing-icon {
   position: relative;
   z-index: 1;
   display: flex;
-  width: 54px;
-  height: 54px;
+  width: 60px;
+  height: 60px;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255,255,255,.3);
-  border-radius: 9px;
-  color: #9bd6ff;
-  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  color: #b9e3ff;
+  background: rgba(255, 255, 255, 0.10);
 }
 
-.services-closing-copy,
-.services-closing-inner > p {
+/* Heading and description */
+
+.services-closing-copy {
   position: relative;
   z-index: 1;
+  min-width: 0;
 }
 
 .services-closing-copy > span {
-  color: #9bd6ff;
-  font-size: 9px;
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #a9dcff;
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.8px;
 }
 
 .services-closing-copy h2 {
-  margin: 8px 0 0;
-  color: #ffffff;
-  font-size: 21px;
-  line-height: 1.35;
+  margin: 0;
+  color: #ffffff !important;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .services-closing-copy h2 strong {
   display: block;
-  color: #73c4ff;
+  color: #9bd7ff !important;
 }
 
-.services-closing-divider {
-  width: 1px;
-  height: 55px;
-  background: rgba(255,255,255,.28);
-}
+/* Description - improved visibility */
 
+.services-closing-copy p,
 .services-closing-inner > p {
-  margin: 0;
-  color: #d4e7f7;
-  font-size: 12px;
+  position: relative;
+  z-index: 1;
+  margin: 12px 0 0;
+  color: #e5f2ff !important;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1.8;
 }
 
-.services-closing-button {
+/* Vertical divider */
+
+.services-closing-divider {
   position: relative;
   z-index: 1;
+  width: 1px;
+  height: 65px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Contact Us button */
+
+.services-closing-button {
+  position: relative;
+  z-index: 2;
   display: inline-flex;
-  min-height: 44px;
+  width: 100%;
+  min-height: 54px;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 13px 16px;
-  border-radius: 5px;
-  background: #ffffff;
-  color: #12558d;
-  font-size: 12px;
+  gap: 10px;
+  padding: 14px 22px;
+  border: 1px solid #ffffff;
+  border-radius: 7px;
+  background: #ffffff !important;
+  color: #104c7d !important;
+  font-size: 14px;
   font-weight: 800;
-  text-decoration: none;
+  text-decoration: none !important;
   white-space: nowrap;
-  transition: background .2s ease, transform .2s ease;
+  transition: background 0.25s ease, color 0.25s ease,
+    transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .services-closing-button:hover {
-  transform: translateY(-2px);
-  background: #e7f4ff;
+  transform: translateY(-3px);
+  background: #dff1ff !important;
+  color: #082b50 !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .services-closing-inner {
+    grid-template-columns: 55px minmax(0, 1fr);
+    gap: 20px;
+    padding: 32px;
+  }
+
+  .services-closing-divider {
+    display: none;
+  }
+
+  .services-closing-button {
+    grid-column: 2;
+    max-width: 280px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .services-closing-banner {
+    padding-bottom: 45px;
+  }
+
+  .services-closing-inner {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 27px 22px;
+    border-radius: 12px;
+  }
+
+  .services-closing-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .services-closing-copy h2 {
+    font-size: 21px;
+  }
+
+  .services-closing-copy p,
+  .services-closing-inner > p {
+    font-size: 13px;
+  }
+
+  .services-closing-button {
+    grid-column: 1;
+    width: 100%;
+    max-width: none;
+    min-height: 50px;
+  }
+}
+
 
 /* =========================================================
    LAPTOP AND TABLET
@@ -2669,10 +2752,8 @@ img {
 }
 
 
-
-
 /* =========================================================
-   SLNS PARTNER COMPANIES PAGE
+   SLNS PARTNER COMPANIES — PROFESSIONAL DESIGN
 ========================================================= */
 
 .partners-page {
@@ -2680,11 +2761,13 @@ img {
   min-height: 100vh;
   overflow-x: clip;
   background: #ffffff;
-  color: #17243b;
+  color: #172b4d;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.partners-page * {
+.partners-page *,
+.partners-page *::before,
+.partners-page *::after {
   box-sizing: border-box;
 }
 
@@ -2700,11 +2783,11 @@ img {
 
 .partners-page .section-kicker {
   display: inline-block;
-  color: #075bea;
-  font-size: 12px;
+  color: #1262d6;
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: 2.2px;
-  line-height: 1.6;
+  letter-spacing: 2.3px;
+  line-height: 1.7;
 }
 
 /* =========================================================
@@ -2712,34 +2795,23 @@ img {
 ========================================================= */
 
 .partners-page .partners-hero {
-  min-height: 470px;
   position: relative;
+  min-height: 440px;
   display: flex;
   align-items: center;
   overflow: hidden;
   background:
-    linear-gradient(
-      90deg,
-      rgba(4, 24, 68, 0.96),
-      rgba(5, 50, 125, 0.82)
-    ),
+    linear-gradient(90deg, rgba(4, 25, 65, 0.96), rgba(5, 48, 112, 0.82)),
     url("/images/partner-hero.png") center / cover no-repeat;
 }
 
 .partners-page .partners-hero-overlay {
   position: absolute;
   inset: 0;
+  pointer-events: none;
   background:
-    radial-gradient(
-      circle at 82% 25%,
-      rgba(54, 139, 255, 0.24),
-      transparent 35%
-    ),
-    linear-gradient(
-      0deg,
-      rgba(3, 20, 58, 0.15),
-      transparent
-    );
+    radial-gradient(circle at 80% 25%, rgba(83, 166, 255, 0.22), transparent 35%),
+    linear-gradient(0deg, rgba(2, 19, 52, 0.2), transparent);
 }
 
 .partners-page .partners-hero-content {
@@ -2748,15 +2820,15 @@ img {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 75px 0 100px;
+  padding: 75px 0 90px;
   color: #ffffff;
 }
 
 .partners-page .partners-eyebrow {
   display: inline-block;
   margin-bottom: 18px;
-  color: #a9d0ff;
-  font-size: 12px;
+  color: #a9d5ff;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 3px;
 }
@@ -2764,22 +2836,23 @@ img {
 .partners-page .partners-hero h1 {
   max-width: 750px;
   margin: 0;
-  font-size: clamp(38px, 5.5vw, 68px);
+  color: #ffffff;
+  font-size: clamp(40px, 5.5vw, 68px);
   font-weight: 900;
-  line-height: 1.08;
+  line-height: 1.1;
   letter-spacing: -1.5px;
 }
 
 .partners-page .partners-hero h1 span {
-  color: #78b7ff;
+  color: #8cc8ff;
 }
 
 .partners-page .partners-hero-content > p {
   max-width: 590px;
   margin: 22px 0 28px;
-  color: #e1edff;
-  font-size: 17px;
-  line-height: 1.8;
+  color: #e5f1ff;
+  font-size: 16px;
+  line-height: 1.85;
 }
 
 .partners-page .partners-hero-actions {
@@ -2792,40 +2865,40 @@ img {
 .partners-page .partners-primary-button,
 .partners-page .partners-outline-button,
 .partners-page .collaboration-button {
-  min-height: 48px;
+  min-height: 49px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 13px 22px;
-  border-radius: 5px;
+  padding: 13px 23px;
+  border-radius: 6px;
   font-size: 13px;
   font-weight: 800;
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    color 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 .partners-page .partners-primary-button {
   color: #ffffff;
-  background: #0864ee;
+  background: #0864ed;
+  box-shadow: 0 7px 18px rgba(0, 71, 190, 0.22);
 }
 
 .partners-page .partners-primary-button:hover {
-  background: #004dc2;
-  transform: translateY(-2px);
+  background: #004fc5;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0, 71, 190, 0.3);
 }
 
 .partners-page .partners-outline-button {
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.65);
-  background: transparent;
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .partners-page .partners-outline-button:hover {
-  color: #092d80;
+  color: #0a3977;
   background: #ffffff;
+  transform: translateY(-2px);
 }
 
 .partners-page .partners-hero-bottom {
@@ -2836,7 +2909,7 @@ img {
   display: flex;
   align-items: center;
   gap: 13px;
-  color: #d9eaff;
+  color: #e1efff;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 2px;
@@ -2847,166 +2920,203 @@ img {
   height: 5px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: #78b7ff;
+  background: #83c5ff;
 }
 
 /* =========================================================
-   INTRODUCTION
+   HIDE INTRODUCTION SECTION
 ========================================================= */
 
 .partners-page .partners-intro {
-  display: grid;
-  grid-template-columns: 76px minmax(0, 1fr);
-  gap: 28px;
-  align-items: start;
-  padding-top: 85px;
-  padding-bottom: 85px;
-}
-
-.partners-page .partners-intro-icon {
-  width: 68px;
-  height: 68px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 16px;
-  color: #075bea;
-  background: #edf4ff;
-}
-
-.partners-page .partners-intro-content h2,
-.partners-page .partners-section-heading h2,
-.partners-page .collaboration-content h2 {
-  margin: 10px 0 18px;
-  color: #10264c;
-  font-size: clamp(28px, 3.5vw, 42px);
-  font-weight: 850;
-  line-height: 1.2;
-  letter-spacing: -0.8px;
-}
-
-.partners-page .partners-intro-content h2 span,
-.partners-page .partners-section-heading h2 span,
-.partners-page .collaboration-content h2 span {
-  color: #075bea;
-}
-
-.partners-page .partners-intro-content p {
-  max-width: 900px;
-  margin: 0 0 13px;
-  color: #5c687c;
-  font-size: 15px;
-  line-height: 1.9;
+  display: none !important;
 }
 
 /* =========================================================
-   PARTNER COMPANY CARDS
+   PARTNER COMPANIES
 ========================================================= */
 
 .partners-page .partners-list-section {
-  padding: 82px 0 90px;
-  background: #f5f8fd;
+  padding: 85px 0 95px;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(19, 98, 214, 0.045), transparent 28%),
+    #f5f8fd;
 }
 
 .partners-page .partners-section-heading {
-  margin-bottom: 42px;
+  max-width: 760px;
+  margin: 0 auto 48px;
   text-align: center;
+}
+
+.partners-page .partners-section-heading h2 {
+  margin: 11px 0 12px;
+  color: #10264c;
+  font-size: clamp(29px, 3.5vw, 42px);
+  font-weight: 850;
+  line-height: 1.25;
+  letter-spacing: -0.8px;
+}
+
+.partners-page .partners-section-heading h2 span {
+  color: #075bea;
 }
 
 .partners-page .partners-section-heading > p {
   margin: 0;
-  color: #68758a;
+  color: #687991;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
+
+/* Four-card grid */
 
 .partners-page .partners-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
+  gap: 25px;
+  align-items: stretch;
 }
 
+/* Individual cards */
+
 .partners-page .partner-card {
-  min-height: 245px;
-  padding: 27px 29px 22px;
+  min-width: 0;
+  min-height: 390px;
+  padding: 25px 28px 22px;
   display: flex;
   flex-direction: column;
-  border: 1px solid #e6edf7;
-  border-radius: 12px;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #e2eaf5;
+  border-radius: 15px;
   background: #ffffff;
-  box-shadow: 0 8px 28px rgba(20, 57, 110, 0.045);
+  box-shadow: 0 9px 30px rgba(20, 57, 110, 0.055);
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
 }
 
 .partners-page .partner-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(20, 57, 110, 0.1);
+  border-color: #c8dcf7;
+  box-shadow: 0 18px 40px rgba(20, 57, 110, 0.11);
 }
 
 .partners-page .partner-card-top {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .partners-page .partner-number {
-  color: #a4b4cc;
-  font-size: 14px;
+  color: #9babc2;
+  font-size: 13px;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
 .partners-page .partner-building-icon {
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  color: #075bea;
+  border-radius: 11px;
+  color: #1262d6;
+  background: #edf4ff;
+}
+
+/* Same-size logo display area for both PNG logos */
+
+.partners-page .partner-logo-area {
+  width: 100%;
+  height: 130px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 20px;
+  padding: 14px;
+  overflow: hidden;
+  border: 1px solid #edf1f7;
+  border-radius: 11px;
+  background: #fbfdff;
+}
+
+.partners-page .partner-company-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 190px;
+  max-height: 100px;
+  object-fit: contain;
+  object-position: center;
+  margin: auto;
+  transition: transform 0.3s ease;
+}
+
+.partners-page .partner-card:hover .partner-company-logo {
+  transform: scale(1.04);
+}
+
+/* Default logo area for companies without supplied logos */
+
+.partners-page .partner-default-logo {
+  width: 66px;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dce9fa;
+  border-radius: 16px;
+  color: #1764bd;
   background: #edf4ff;
 }
 
 .partners-page .partner-category {
-  color: #075bea;
+  display: inline-block;
+  color: #1262d6;
   font-size: 10px;
   font-weight: 800;
-  letter-spacing: 1.7px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
 .partners-page .partner-card h3 {
-  margin: 9px 0;
+  margin: 10px 0;
   color: #12284e;
   font-size: 21px;
   font-weight: 800;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 .partners-page .partner-card > p {
-  margin: 0 0 20px;
-  color: #68758a;
+  max-width: 420px;
+  margin: 0 auto 20px;
+  color: #687991;
   font-size: 13px;
-  line-height: 1.75;
+  line-height: 1.8;
 }
 
 .partners-page .partner-card-footer {
+  width: 100%;
   margin-top: auto;
   padding-top: 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-top: 1px solid #edf1f7;
-  color: #8a98ad;
+  color: #8797ad;
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 1.3px;
 }
 
 .partners-page .partner-card-footer svg {
+  flex-shrink: 0;
   color: #0874e8;
 }
 
@@ -3015,46 +3125,46 @@ img {
 ========================================================= */
 
 .partners-page .partnership-values-section {
-  padding: 82px 0 90px;
+  padding: 85px 0 95px;
   background: #ffffff;
 }
 
 .partners-page .partnership-values-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
+  gap: 23px;
 }
 
 .partners-page .value-card {
-  padding: 30px 25px;
-  border: 1px solid #e7edf6;
-  border-radius: 12px;
+  min-width: 0;
+  padding: 31px 27px;
+  border: 1px solid #e5edf7;
+  border-radius: 13px;
   background: #ffffff;
-  box-shadow: 0 8px 25px rgba(20, 57, 110, 0.045);
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  box-shadow: 0 8px 26px rgba(20, 57, 110, 0.045);
+  transition: all 0.25s ease;
 }
 
 .partners-page .value-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(20, 57, 110, 0.09);
+  border-color: #cbdcf2;
+  box-shadow: 0 15px 32px rgba(20, 57, 110, 0.09);
 }
 
 .partners-page .value-icon {
-  width: 52px;
-  height: 52px;
+  width: 53px;
+  height: 53px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  border-radius: 12px;
+  border-radius: 13px;
   color: #075bea;
   background: #edf4ff;
 }
 
 .partners-page .value-card h3 {
-  margin: 0 0 10px;
+  margin: 0 0 11px;
   color: #12284e;
   font-size: 19px;
   font-weight: 800;
@@ -3062,9 +3172,9 @@ img {
 
 .partners-page .value-card p {
   margin: 0;
-  color: #68758a;
+  color: #687991;
   font-size: 13px;
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 /* =========================================================
@@ -3072,19 +3182,19 @@ img {
 ========================================================= */
 
 .partners-page .collaboration-section {
-  padding: 80px 0 85px;
+  position: relative;
+  padding: 82px 0 88px;
+  overflow: hidden;
   color: #ffffff;
   text-align: center;
   background:
-    radial-gradient(
-      circle at 15% 20%,
-      rgba(73, 151, 255, 0.2),
-      transparent 28%
-    ),
+    radial-gradient(circle at 15% 20%, rgba(73, 151, 255, 0.2), transparent 28%),
     linear-gradient(120deg, #061d4d, #0753bd);
 }
 
 .partners-page .collaboration-content {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3104,60 +3214,52 @@ img {
 }
 
 .partners-page .collaboration-content .section-kicker {
-  color: #a9d0ff;
+  color: #b4d9ff;
 }
 
 .partners-page .collaboration-content h2 {
   max-width: 700px;
+  margin: 10px 0 18px;
   color: #ffffff;
+  font-size: clamp(29px, 3.5vw, 42px);
+  font-weight: 850;
+  line-height: 1.25;
 }
 
 .partners-page .collaboration-content h2 span {
   display: block;
-  color: #9bcaff;
+  color: #a5d1ff;
 }
 
 .partners-page .collaboration-content > p {
   max-width: 690px;
-  margin: 0 auto 27px;
-  color: #e0edff;
+  margin: 0 auto 28px;
+  color: #e3efff;
   font-size: 14px;
   line-height: 1.9;
 }
 
 .partners-page .collaboration-button {
-  color: #0647a6;
+  min-height: 50px;
+  color: #084caa;
   background: #ffffff;
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.12);
 }
 
 .partners-page .collaboration-button:hover {
   transform: translateY(-3px);
+  color: #062e70;
   background: #eaf3ff;
+  box-shadow: 0 11px 25px rgba(0, 0, 0, 0.17);
 }
 
 /* =========================================================
    TABLET
 ========================================================= */
 
-@media (max-width: 768px) {
-  .partners-page .partners-hero {
-    min-height: 430px;
-  }
-
-  .partners-page .partners-intro {
-    grid-template-columns: 58px minmax(0, 1fr);
-    gap: 20px;
-    padding-top: 65px;
-    padding-bottom: 65px;
-  }
-
-  .partners-page .partners-intro-icon {
-    width: 55px;
-    height: 55px;
-  }
-
+@media (max-width: 900px) {
   .partners-page .partners-grid {
-    gap: 16px;
+    gap: 18px;
   }
 
   .partners-page .partner-card {
@@ -3165,11 +3267,27 @@ img {
   }
 
   .partners-page .partnership-values-grid {
-    gap: 15px;
+    gap: 16px;
   }
 
   .partners-page .value-card {
-    padding: 24px 20px;
+    padding: 25px 21px;
+  }
+}
+
+@media (max-width: 768px) {
+  .partners-page .partners-hero {
+    min-height: 420px;
+  }
+
+  .partners-page .partners-list-section,
+  .partners-page .partnership-values-section {
+    padding-top: 70px;
+    padding-bottom: 75px;
+  }
+
+  .partners-page .partner-card {
+    min-height: 380px;
   }
 }
 
@@ -3178,6 +3296,10 @@ img {
 ========================================================= */
 
 @media (max-width: 600px) {
+  .partners-page .section-container {
+    width: 90%;
+  }
+
   .partners-page .partners-hero {
     min-height: 420px;
     background-position: center;
@@ -3185,7 +3307,7 @@ img {
 
   .partners-page .partners-hero-content {
     width: 90%;
-    padding: 65px 0 90px;
+    padding: 62px 0 90px;
   }
 
   .partners-page .partners-eyebrow {
@@ -3195,17 +3317,23 @@ img {
 
   .partners-page .partners-hero h1 {
     font-size: 39px;
+    line-height: 1.15;
   }
 
   .partners-page .partners-hero-content > p {
     font-size: 14px;
-    line-height: 1.7;
+    line-height: 1.75;
   }
 
   .partners-page .partners-hero-actions {
     align-items: stretch;
     flex-direction: column;
-    max-width: 250px;
+    max-width: 255px;
+  }
+
+  .partners-page .partners-primary-button,
+  .partners-page .partners-outline-button {
+    width: 100%;
   }
 
   .partners-page .partners-hero-bottom {
@@ -3217,35 +3345,46 @@ img {
     letter-spacing: 1px;
   }
 
-  .partners-page .partners-intro {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    padding-top: 55px;
-    padding-bottom: 55px;
-  }
-
-  .partners-page .partners-intro-content h2,
-  .partners-page .partners-section-heading h2,
-  .partners-page .collaboration-content h2 {
-    font-size: 29px;
-  }
-
-  .partners-page .partners-intro-content p {
-    font-size: 14px;
-  }
-
   .partners-page .partners-list-section,
   .partners-page .partnership-values-section {
     padding: 60px 0;
   }
 
+  .partners-page .partners-section-heading {
+    margin-bottom: 30px;
+  }
+
+  .partners-page .partners-section-heading h2,
+  .partners-page .collaboration-content h2 {
+    font-size: 29px;
+    line-height: 1.3;
+  }
+
+  .partners-page .partners-section-heading > p {
+    font-size: 14px;
+  }
+
   .partners-page .partners-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 17px;
   }
 
   .partners-page .partner-card {
-    min-height: 225px;
+    min-height: 365px;
+    padding: 23px;
+  }
+
+  .partners-page .partner-logo-area {
+    height: 120px;
+  }
+
+  .partners-page .partner-company-logo {
+    max-width: 180px;
+    max-height: 95px;
+  }
+
+  .partners-page .partner-card h3 {
+    font-size: 20px;
   }
 
   .partners-page .partnership-values-grid {
@@ -3254,7 +3393,7 @@ img {
   }
 
   .partners-page .value-card {
-    padding: 24px;
+    padding: 25px;
   }
 
   .partners-page .collaboration-section {
@@ -3263,6 +3402,7 @@ img {
 
   .partners-page .collaboration-content > p {
     font-size: 13px;
+    line-height: 1.85;
   }
 }
 
@@ -3278,6 +3418,14 @@ img {
   .partners-page .partners-hero-bottom {
     gap: 6px;
     font-size: 7px;
+  }
+
+  .partners-page .partner-card {
+    padding: 19px;
+  }
+
+  .partners-page .partner-card h3 {
+    font-size: 18px;
   }
 
   .partners-page .partners-primary-button,
@@ -3303,396 +3451,368 @@ img {
 }
 
 
-/* =========================================
-   SLNS MANPOWER SERVICES
-   INTERNSHIPS PAGE — FINAL STYLES
-   HEADER & FOOTER CSS REMOVED
-========================================= */
-
-/* =========================================
-   BASE
-========================================= */
+/* =========================================================
+   SLNS MAN POWER SERVICES
+   INTERNSHIPS PAGE — PAGE-SPECIFIC CSS
+   Header and Footer styles are not included.
+========================================================= */
 
 .internships-page {
+  --internship-primary: #123b68;
+  --internship-secondary: #1d65a5;
+  --internship-accent: #e9a23b;
+  --internship-text: #243447;
+  --internship-muted: #64748b;
+  --internship-light: #f4f8fc;
+  --internship-border: #e1e9f2;
+
   width: 100%;
   overflow: hidden;
-  background: #ffffff;
-  color: #183b5d;
-  font-family: inherit;
-}
-
-.internships-page *,
-.internships-page *::before,
-.internships-page *::after {
-  box-sizing: border-box;
+  color: var(--internship-text);
+  background: #fff;
 }
 
 .internship-container {
-  width: 90%;
-  max-width: 1250px;
-  margin: 0 auto;
+  width: min(1160px, calc(100% - 40px));
+  margin-inline: auto;
 }
 
-/* =========================================
-   HERO BANNER
-========================================= */
+/* =========================
+   HERO SECTION
+========================= */
 
 .internship-hero {
-  min-height: 510px;
   position: relative;
+  min-height: 480px;
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: #092c50;
+  background: var(--internship-primary);
 }
 
 .internship-hero-image {
-  object-fit: cover;
-  object-position: center;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
 .internship-hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(
     90deg,
-    rgba(5, 35, 67, 0.88) 0%,
-    rgba(5, 35, 67, 0.65) 42%,
-    rgba(5, 35, 67, 0.08) 100%
+    rgba(8, 34, 64, 0.92) 0%,
+    rgba(12, 48, 85, 0.78) 48%,
+    rgba(12, 48, 85, 0.28) 100%
   );
 }
 
 .internship-hero-content {
   position: relative;
   z-index: 2;
-  width: 92%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 80px 0;
-}
-
-.internship-eyebrow,
-.internships-page .section-kicker {
-  display: inline-block;
-  margin-bottom: 15px;
-  color: #1688dc;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2.2px;
+  width: min(1160px, calc(100% - 40px));
+  margin-inline: auto;
+  padding: 90px 0;
+  color: #fff;
 }
 
 .internship-eyebrow {
-  color: #9bd4ff;
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #f4c16e;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
 }
 
 .internship-hero-content h1 {
-  max-width: 650px;
+  max-width: 720px;
   margin: 0 0 20px;
-  color: #ffffff;
-  font-size: clamp(38px, 5vw, 62px);
+  color: #fff;
+  font-size: clamp(36px, 5vw, 60px);
   font-weight: 800;
   line-height: 1.12;
 }
 
 .internship-hero-content p {
-  max-width: 570px;
+  max-width: 650px;
   margin: 0 0 30px;
-  color: #e4eff9;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 17px;
   line-height: 1.8;
 }
 
-.internship-primary-button,
-.internship-cta-button {
+.internship-primary-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 27px;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  background: #0785dc;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 14px;
+  gap: 10px;
+  min-height: 50px;
+  padding: 13px 24px;
+  border: 0;
+  border-radius: 6px;
+  color: #15395f;
+  background: #f4bd62;
+  font-size: 15px;
   font-weight: 700;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease;
 }
 
-.internship-primary-button:hover,
-.internship-cta-button:hover {
-  background: #006bb5;
-  color: #ffffff;
+.internship-primary-button:hover {
+  background: #ffd38b;
   transform: translateY(-2px);
 }
 
-/* =========================================
+/* =========================
    INTRODUCTION
-========================================= */
+========================= */
 
 .internship-intro {
-  max-width: 900px;
-  padding-top: 85px;
-  padding-bottom: 75px;
+  padding: 85px 20px 75px;
+  background: #fff;
   text-align: center;
 }
 
-.internship-intro h2,
-.internship-section-heading h2,
-.branches-inner h2 {
-  margin: 0 0 18px;
-  color: #12365a;
-  font-size: clamp(28px, 3vw, 38px);
+.internship-intro-content {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.internship-intro-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--internship-primary);
+  box-shadow: 0 10px 25px rgba(18, 59, 104, 0.16);
+}
+
+.internship-intro-icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.section-kicker {
+  display: block;
+  margin-bottom: 13px;
+  color: var(--internship-secondary);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.internship-intro h2 {
+  margin: 0 0 20px;
+  color: var(--internship-primary);
+  font-size: clamp(27px, 3.5vw, 39px);
   font-weight: 800;
   line-height: 1.25;
 }
 
-.internship-intro p,
-.internship-section-heading p,
-.branches-inner p {
+.internship-intro p {
   margin: 0;
-  color: #64788e;
+  color: var(--internship-muted);
   font-size: 16px;
-  line-height: 1.85;
+  line-height: 1.9;
 }
 
-/* =========================================
-   ELIGIBILITY AND DOCUMENTS
-========================================= */
+/* =========================
+   COMMON SECTION HEADINGS
+========================= */
+
+.internship-section-heading {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.internship-section-heading h2 {
+  margin: 0;
+  color: var(--internship-primary);
+  font-size: clamp(27px, 3.2vw, 36px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.internship-section-heading p {
+  max-width: 700px;
+  margin: 12px auto 0;
+  color: var(--internship-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================
+   ELIGIBILITY & DOCUMENTS
+========================= */
 
 .internship-information {
-  padding: 55px 0 75px;
-  background: #f1f6fc;
+  padding: 75px 0;
+  background: var(--internship-light);
 }
 
 .internship-info-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: stretch;
-  gap: 30px;
+  gap: 26px;
 }
 
 .internship-info-card {
-  position: relative;
-  min-width: 0;
-  padding: 38px;
-  overflow: hidden;
-  border: 1px solid #d9e6f3;
-  border-radius: 13px;
-  background: #ffffff;
-  box-shadow: 0 15px 40px rgba(30, 65, 100, 0.06);
-}
-
-.internship-info-card::before {
-  position: absolute;
-  top: -75px;
-  right: -75px;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  background: #eef6ff;
-  content: "";
-  pointer-events: none;
-}
-
-.documents-card::before {
-  background: #eef6ff;
+  padding: 32px;
+  border: 1px solid var(--internship-border);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(21, 53, 86, 0.06);
 }
 
 .internship-card-heading {
-  position: relative;
-  z-index: 1;
   display: flex;
-  min-height: 80px;
   align-items: center;
-  gap: 18px;
+  gap: 15px;
+  margin-bottom: 15px;
 }
 
 .internship-heading-icon {
   display: flex;
-  width: 67px;
-  height: 67px;
-  flex-shrink: 0;
+  flex: 0 0 52px;
   align-items: center;
   justify-content: center;
+  width: 52px;
+  height: 52px;
   border-radius: 12px;
+  color: #fff;
+  background: var(--internship-primary);
 }
 
 .internship-heading-icon svg {
-  width: 30px;
-  height: 30px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.9;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.eligibility-icon {
-  color: #0784df;
-  background: #e7f3ff;
-}
-
-.documents-icon {
-  color: #00a78b;
-  background: #e5f7f2;
-}
-
-.internships-page .card-kicker {
-  display: block;
-  margin-bottom: 8px;
-  color: #2786ce;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 2px;
+  width: 25px;
+  height: 25px;
 }
 
 .internship-card-heading h3 {
   margin: 0;
-  color: #12365a;
-  font-size: clamp(21px, 2vw, 27px);
+  color: var(--internship-primary);
+  font-size: 21px;
   font-weight: 800;
-  line-height: 1.2;
+}
+
+.card-kicker {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--internship-secondary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .internship-card-description {
-  position: relative;
-  z-index: 1;
-  min-height: 66px;
-  margin: 18px 0 15px;
-  color: #718399;
-  font-size: 15px;
-  line-height: 1.8;
+  margin: 0 0 22px;
+  color: var(--internship-muted);
+  font-size: 14px;
+  line-height: 1.7;
 }
 
 .internship-checklist {
-  position: relative;
-  z-index: 1;
+  display: grid;
+  gap: 13px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.eligibility-item,
+.document-item {
   display: flex;
-  flex-direction: column;
-}
-
-/* Eligibility rows */
-
-.eligibility-item {
-  display: grid;
-  width: 100%;
-  min-width: 0;
-  height: 62px;
-  min-height: 62px;
-  grid-template-columns: 34px minmax(0, 1fr) 25px;
-  align-items: center;
-  margin-bottom: 12px;
-  padding: 0 17px;
-  border: 1px solid #dce9f7;
-  border-radius: 6px;
-  background: #f8fbff;
-  transition: background 0.25s ease, border-color 0.25s ease;
-}
-
-.eligibility-item:last-child {
-  margin-bottom: 0;
-}
-
-.eligibility-item:hover {
-  border-color: #a9d3f5;
-  background: #edf6ff;
-}
-
-/* DOCUMENT ROWS - FIXED COLUMN ORDER */
-.internships-page .document-item {
-  display: grid;
-  grid-template-columns: 30px minmax(0, 1fr) 25px;
   align-items: center;
   gap: 12px;
-  width: 100%;
-  min-width: 0;
-  min-height: 68px;
-  height: auto;
-  padding: 12px 14px;
-  box-sizing: border-box;
-  border-bottom: 1px solid #e3ebf3;
-  background: #ffffff;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid #edf1f6;
+  border-radius: 8px;
+  background: #fbfdff;
 }
 
-.internships-page .document-item > * {
-  min-width: 0;
+.item-number {
+  display: flex;
+  flex: 0 0 27px;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--internship-secondary);
+  font-size: 12px;
+  font-weight: 800;
 }
 
-.internships-page .document-item .item-label {
-  display: block;
-  min-width: 0;
-  white-space: normal;
-  word-break: normal;
-  overflow-wrap: break-word;
-  line-height: 1.45;
+.item-label {
+  flex: 1;
+  color: var(--internship-text);
+  font-size: 14px;
+  font-weight: 600;
 }
 
-.internships-page .document-check {
-  justify-self: center;
-  flex-shrink: 0;
+.eligibility-check,
+.document-check {
+  flex: 0 0 18px;
+  color: #21966a;
 }
 
-@media (max-width: 600px) {
-  .internships-page .document-item {
-    grid-template-columns: 25px minmax(0, 1fr) 22px;
-    gap: 9px;
-    min-height: 60px;
-    padding: 11px 9px;
-  }
-
-  .internships-page .document-item .item-label {
-    font-size: 12px;
-  }
+.eligibility-check svg,
+.document-check svg {
+  width: 18px;
+  height: 18px;
 }
 
-/* =========================================
+/* =========================
    INTERNSHIP GALLERY
-========================================= */
+========================= */
 
 .internship-gallery-section {
-  padding: 85px 0;
-  background: #ffffff;
-}
-
-.internship-section-heading {
-  max-width: 760px;
-  margin: 0 auto 42px;
-  text-align: center;
+  padding: 80px 0;
+  background: #fff;
 }
 
 .internship-gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 25px;
+  gap: 22px;
 }
 
 .internship-gallery-card {
   overflow: hidden;
-  border: 1px solid #e2eaf2;
-  border-radius: 10px;
-  background: #ffffff;
-  box-shadow: 0 8px 25px rgba(24, 59, 93, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--internship-border);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 7px 22px rgba(21, 53, 86, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .internship-gallery-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(24, 59, 93, 0.12);
+  box-shadow: 0 14px 30px rgba(21, 53, 86, 0.12);
 }
 
 .internship-gallery-photo {
   position: relative;
   width: 100%;
-  height: 240px;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: #e3edf6;
+  background: #eaf0f6;
 }
 
 .internship-gallery-image {
   object-fit: cover;
-  object-position: center;
-  transition: transform 0.45s ease;
+  transition: transform 0.4s ease;
 }
 
 .internship-gallery-card:hover .internship-gallery-image {
@@ -3700,331 +3820,375 @@ img {
 }
 
 .internship-gallery-content {
-  padding: 23px;
+  padding: 19px 20px 21px;
 }
 
 .internship-gallery-content h3 {
-  margin: 0 0 10px;
-  color: #173b5d;
-  font-size: 19px;
+  margin: 0;
+  color: var(--internship-primary);
+  font-size: 17px;
   font-weight: 750;
 }
 
-.internship-gallery-content p {
+/* =========================
+   TECHNICAL BRANCHES
+========================= */
+
+.internship-branches-section {
+  padding: 80px 0;
+  background: var(--internship-light);
+}
+
+.internship-branches-heading {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.internship-branches-heading h2 {
   margin: 0;
-  color: #718399;
-  font-size: 14px;
+  color: var(--internship-primary);
+  font-size: clamp(28px, 3.2vw, 36px);
+  font-weight: 800;
+}
+
+.internship-branches-heading p {
+  margin: 12px 0 0;
+  color: var(--internship-muted);
+  font-size: 15px;
   line-height: 1.7;
 }
 
-/* =========================================
-   TECHNICAL BRANCHES
-========================================= */
-
-.internship-branches-section {
-  padding: 75px 0;
-  background: #f1f6fc;
+.internship-branches-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 18px;
+  border-radius: 15px;
+  color: #fff;
+  background: var(--internship-primary);
 }
 
-.branches-inner {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  align-items: center;
-  gap: 55px;
+.internship-branches-icon svg {
+  width: 30px;
+  height: 30px;
 }
 
 .internship-branch-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .internship-branch-item {
-  display: inline-flex;
-  min-height: 43px;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 0 19px;
-  border: 1px solid #d7e6f4;
-  border-radius: 5px;
-  background: #ffffff;
-  color: #17466d;
-  font-size: 14px;
-  font-weight: 650;
-  transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  gap: 13px;
+  min-height: 95px;
+  padding: 18px;
+  border: 1px solid var(--internship-border);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 5px 18px rgba(21, 53, 86, 0.05);
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
 .internship-branch-item:hover {
-  border-color: #087bd1;
-  background: #087bd1;
-  color: #ffffff;
+  transform: translateY(-4px);
+  border-color: #9bbbd9;
 }
 
-/* =========================================
+.branch-number {
+  display: flex;
+  flex: 0 0 28px;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--internship-secondary);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.branch-icon {
+  display: flex;
+  flex: 0 0 42px;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  color: var(--internship-primary);
+  background: #eaf2fa;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.internship-branch-item h3 {
+  margin: 0;
+  color: var(--internship-primary);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+/* =========================
    CALL TO ACTION
-========================================= */
+========================= */
 
 .internship-cta-section {
-  padding: 65px 0;
-  background: #0d3459;
+  padding: 75px 20px;
+  color: #fff;
+  background: linear-gradient(120deg, #10365f, #1d65a5);
 }
 
 .internship-cta-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 35px;
+  gap: 30px;
+  width: min(1080px, 100%);
+  margin: 0 auto;
 }
 
-.internship-cta-content .section-kicker {
-  color: #83caff;
+.internship-cta-icon {
+  display: flex;
+  flex: 0 0 62px;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  color: #f5c36f;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.internship-cta-icon svg {
+  width: 30px;
+  height: 30px;
 }
 
 .internship-cta-content h2 {
-  margin: 0 0 12px;
-  color: #ffffff;
+  margin: 0 0 10px;
+  color: #fff;
   font-size: clamp(25px, 3vw, 34px);
-  line-height: 1.3;
+  font-weight: 800;
 }
 
 .internship-cta-content p {
+  max-width: 650px;
   margin: 0;
-  color: #d1e0ee;
+  color: rgba(255, 255, 255, 0.85);
   font-size: 15px;
   line-height: 1.7;
 }
 
+.internship-cta-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 .internship-cta-button {
-  flex-shrink: 0;
-  background: #ffffff;
-  color: #0d3459;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #15395f;
+  background: #f4bd62;
+  font-size: 14px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease;
 }
 
 .internship-cta-button:hover {
-  background: #0785dc;
-  color: #ffffff;
+  background: #ffd38b;
+  transform: translateY(-2px);
 }
 
-/* =========================================
-   TABLET
-========================================= */
+/* =========================
+   TABLET RESPONSIVENESS
+========================= */
 
-@media (max-width: 1050px) {
-  .internship-info-card {
-    padding: 25px;
+@media (max-width: 900px) {
+  .internship-branch-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .internship-gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .internship-card-heading {
-    gap: 12px;
-  }
-}
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 800px) {
-  .internship-info-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
-  }
-
-  .branches-inner {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 30px;
-  }
-
   .internship-cta-content {
-    align-items: flex-start;
-    flex-direction: column;
+    flex-wrap: wrap;
   }
 }
 
-/* =========================================
-   SMALL MOBILE
-========================================= */
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
 
 @media (max-width: 600px) {
   .internship-container {
-    width: 92%;
+    width: min(100% - 30px, 480px);
   }
 
   .internship-hero {
-    min-height: 440px;
-  }
-
-  .internship-hero-image {
-    object-position: center;
-  }
-
-  .internship-hero-overlay {
-    background: rgba(5, 35, 67, 0.72);
+    min-height: 420px;
   }
 
   .internship-hero-content {
-    padding: 65px 0;
+    width: calc(100% - 36px);
+    padding: 70px 0;
+  }
+
+  .internship-hero-overlay {
+    background: rgba(8, 34, 64, 0.78);
   }
 
   .internship-hero-content h1 {
-    font-size: 38px;
+    font-size: 36px;
   }
 
   .internship-hero-content p {
     font-size: 15px;
+    line-height: 1.7;
   }
 
   .internship-intro {
-    padding-top: 60px;
-    padding-bottom: 55px;
+    padding: 60px 18px;
   }
 
-  .internship-information {
-    padding: 35px 0 50px;
+  .internship-intro-icon {
+    width: 66px;
+    height: 66px;
   }
 
-  .internship-info-card {
-    padding: 22px 16px;
+  .internship-intro h2 {
+    font-size: 28px;
   }
 
-  .internship-card-heading {
-    min-height: 60px;
-    gap: 12px;
-  }
-
-  .internship-heading-icon {
-    width: 52px;
-    height: 52px;
-  }
-
-  .internship-heading-icon svg {
-    width: 26px;
-    height: 26px;
-  }
-
-  .internship-card-heading h3 {
-    font-size: 21px;
-  }
-
-  .internships-page .card-kicker {
-    font-size: 9px;
-    letter-spacing: 1.4px;
-  }
-
-  .internship-card-description {
-    min-height: 0;
-    margin: 15px 0 18px;
+  .internship-intro p {
     font-size: 14px;
   }
 
-  .eligibility-item {
-    height: 58px;
-    min-height: 58px;
-    grid-template-columns: 29px minmax(0, 1fr) 22px;
-    margin-bottom: 12px;
-    padding: 0 9px;
-  }
-
-  .document-item {
-    height: 70px;
-    min-height: 70px;
-    grid-template-columns: 23px 29px minmax(0, 1fr);
-    padding: 0 9px;
-  }
-
-  .internships-page .item-number {
-    font-size: 12px;
-  }
-
-  .internships-page .item-label {
-    font-size: 12px;
-  }
-
-  .eligibility-check {
-    width: 18px;
-    height: 18px;
-    font-size: 11px;
-  }
-
-  .internship-gallery-section {
+  .internship-information,
+  .internship-gallery-section,
+  .internship-branches-section {
     padding: 60px 0;
   }
 
+  .internship-info-grid,
   .internship-gallery-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 
-  .internship-gallery-photo {
-    height: 230px;
-  }
-
-  .internship-gallery-content {
-    padding: 20px;
-  }
-
-  .internship-branches-section {
-    padding: 55px 0;
-  }
-
-  .internship-branch-list {
-    gap: 9px;
-  }
-
-  .internship-branch-item {
-    min-height: 39px;
-    padding: 0 13px;
-    font-size: 12px;
-  }
-
-  .internship-cta-section {
-    padding: 50px 0;
-  }
-}
-
-/* =========================================
-   EXTRA SMALL MOBILE
-========================================= */
-
-@media (max-width: 360px) {
   .internship-info-card {
-    padding: 18px 12px;
-  }
-
-  .internship-card-heading {
-    gap: 9px;
+    padding: 23px 19px;
   }
 
   .internship-card-heading h3 {
     font-size: 19px;
   }
 
-  .internships-page .item-label {
+  .internship-branch-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .internship-branch-item {
+    min-height: 88px;
+    gap: 8px;
+    padding: 12px 9px;
+  }
+
+  .branch-number {
+    flex-basis: 23px;
+    width: 23px;
+    height: 23px;
+    font-size: 10px;
+  }
+
+  .branch-icon {
+    flex-basis: 34px;
+    width: 34px;
+    height: 34px;
+    font-size: 17px;
+  }
+
+  .internship-branch-item h3 {
     font-size: 11px;
   }
 
-  .document-item {
-    grid-template-columns: 21px 25px minmax(0, 1fr);
+  .internship-cta-section {
+    padding: 55px 20px;
+  }
+
+  .internship-cta-content {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .internship-cta-content h2 {
+    font-size: 27px;
+  }
+
+  .internship-cta-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .internship-cta-button {
+    width: 100%;
   }
 }
 
-/* =========================================
+/* =========================
+   SMALL MOBILE SCREENS
+========================= */
+
+@media (max-width: 360px) {
+  .internship-hero-content h1 {
+    font-size: 31px;
+  }
+
+  .internship-branch-list {
+    grid-template-columns: 1fr;
+  }
+
+  .internship-branch-item {
+    min-height: 75px;
+    padding: 13px;
+  }
+}
+
+/* =========================
    ACCESSIBILITY
-========================================= */
+========================= */
 
 @media (prefers-reduced-motion: reduce) {
   .internships-page *,
   .internships-page *::before,
   .internships-page *::after {
     scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
+
 
 
 

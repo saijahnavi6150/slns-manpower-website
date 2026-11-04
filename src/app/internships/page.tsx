@@ -1,14 +1,22 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import {
+  ArrowRight,
+  GraduationCap,
+  FileText,
+  CheckCircle2,
+  Code2,
+  BriefcaseBusiness,
+} from "lucide-react";
 
 const eligibility = [
   "Diploma",
-  "B.Tech",
+  "B. Tech",
   "Degree",
   "ITI",
   "PG",
-  "All Technical Branches",
+  "For All Branches",
 ];
 
 const documents = [
@@ -20,31 +28,79 @@ const documents = [
   "PAN Card Xerox",
 ];
 
+const branches = [
+  {
+    number: "01",
+    icon: "</>",
+    name: "Computer Science & Engineering (CSE)",
+  },
+  {
+    number: "02",
+    icon: "AI",
+    name: "Artificial Intelligence & Machine Learning",
+  },
+  {
+    number: "03",
+    icon: "DS",
+    name: "Artificial Intelligence & Data Science",
+  },
+  {
+    number: "04",
+    icon: "◉",
+    name: "ECE",
+  },
+  {
+    number: "05",
+    icon: "ϟ",
+    name: "EEE",
+  },
+  {
+    number: "06",
+    icon: "▥",
+    name: "CIVIL",
+  },
+  {
+    number: "07",
+    icon: "⚙",
+    name: "MECHANICAL",
+  },
+  {
+    number: "08",
+    icon: "✦",
+    name: "ALL OTHER TECHNICAL BRANCHES",
+  },
+];
+
 const gallery = [
   {
     image: "/images/internship-practical.png",
     title: "Practical Training",
-    description: "Gain practical exposure through hands-on learning.",
+    description:
+      "Gain practical exposure through hands-on learning and guided activities.",
   },
   {
     image: "/images/internship-industrial.png",
     title: "Industrial Exposure",
-    description: "Understand real industrial environments and processes.",
+    description:
+      "Understand industrial environments, operations and workplace processes.",
   },
   {
     image: "/images/internship-workplace.png",
     title: "Professional Workplace",
-    description: "Experience professional workplace practices.",
+    description:
+      "Get familiar with professional workplace practices and teamwork.",
   },
   {
     image: "/images/internship-learning.png",
     title: "Skill Development",
-    description: "Develop technical and professional skills.",
+    description:
+      "Improve technical knowledge and develop professional skills.",
   },
   {
     image: "/images/internship-career.png",
     title: "Career Development",
-    description: "Build a foundation for your future career.",
+    description:
+      "Build a foundation for future learning and career opportunities.",
   },
 ];
 
@@ -83,18 +139,26 @@ export default function InternshipsPage() {
 
           <Link href="/contact-us" className="internship-primary-button">
             Enquire Now
+            <ArrowRight size={18} />
           </Link>
         </div>
       </section>
 
       {/* INTRODUCTION */}
       <section className="internship-intro">
-        <div className="internship-container">
+        <div className="internship-container internship-intro-content">
+          <div className="internship-intro-icon">
+            <GraduationCap size={42} strokeWidth={1.7} />
+          </div>
+
           <span className="section-kicker">
             OPPORTUNITIES FOR STUDENTS
           </span>
 
-          <h2>Start Your Professional Journey With SLNS</h2>
+          <h2>
+            Start Your Professional Journey
+            <span> With SLNS</span>
+          </h2>
 
           <p>
             SLNS Manpower Services Private Limited supports students in
@@ -123,11 +187,11 @@ export default function InternshipsPage() {
           </div>
 
           <div className="internship-info-grid">
-            {/* ELIGIBILITY CARD */}
-            <div className="internship-info-card">
+            {/* ELIGIBILITY */}
+            <article className="internship-info-card">
               <div className="internship-card-heading">
                 <div className="internship-heading-icon eligibility-icon">
-                  <span>✓</span>
+                  <GraduationCap size={27} />
                 </div>
 
                 <div>
@@ -149,17 +213,20 @@ export default function InternshipsPage() {
                     </span>
 
                     <span className="item-label">{item}</span>
-                    <span className="eligibility-check">✓</span>
+                    <CheckCircle2
+                      className="eligibility-check"
+                      size={19}
+                    />
                   </div>
                 ))}
               </div>
-            </div>
+            </article>
 
-            {/* DOCUMENTS CARD */}
-            <div className="internship-info-card documents-card">
+            {/* REQUIRED DOCUMENTS */}
+            <article className="internship-info-card documents-card">
               <div className="internship-card-heading">
                 <div className="internship-heading-icon documents-icon">
-                  <span>▤</span>
+                  <FileText size={26} />
                 </div>
 
                 <div>
@@ -181,16 +248,19 @@ export default function InternshipsPage() {
                     </span>
 
                     <span className="item-label">{item}</span>
-                    <span className="document-check">✓</span>
+                    <CheckCircle2
+                      className="document-check"
+                      size={19}
+                    />
                   </div>
                 ))}
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
-      {/* INTERNSHIP GALLERY */}
+      {/* LEARNING EXPERIENCE GALLERY */}
       <section className="internship-gallery-section">
         <div className="internship-container">
           <div className="internship-section-heading">
@@ -232,31 +302,47 @@ export default function InternshipsPage() {
         </div>
       </section>
 
-      {/* BRANCHES */}
+      {/* TECHNICAL BRANCHES */}
       <section className="internship-branches-section">
-        <div className="internship-container branches-inner">
-          <div>
+        <div className="internship-container">
+          <div className="internship-branches-heading">
+            <div className="internship-branches-icon">
+              <Code2 size={30} />
+            </div>
+
             <span className="section-kicker">
-              STUDENT OPPORTUNITIES
+              OUR TECHNICAL BRANCHES
             </span>
 
-            <h2>Opportunities Across Technical Branches</h2>
+            <h2>
+              Training Available for
+              <span> All Technical Branches</span>
+            </h2>
 
             <p>
-              Students from different technical and educational backgrounds
-              can contact our team to enquire about suitable opportunities.
+              We welcome students from different technical disciplines.
+              Contact our team to enquire about internship, apprenticeship
+              and industrial training opportunities.
             </p>
           </div>
 
           <div className="internship-branch-list">
-            <div className="internship-branch-item">Diploma</div>
-            <div className="internship-branch-item">Engineering</div>
-            <div className="internship-branch-item">ITI</div>
-            <div className="internship-branch-item">Degree</div>
-            <div className="internship-branch-item">Postgraduate</div>
-            <div className="internship-branch-item">
-              Other Technical Courses
-            </div>
+            {branches.map((branch) => (
+              <article
+                className="internship-branch-item"
+                key={branch.number}
+              >
+                <span className="branch-number">
+                  {branch.number}
+                </span>
+
+                <div className="branch-icon">
+                  {branch.icon}
+                </div>
+
+                <h3>{branch.name}</h3>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -264,6 +350,10 @@ export default function InternshipsPage() {
       {/* CALL TO ACTION */}
       <section className="internship-cta-section">
         <div className="internship-container internship-cta-content">
+          <div className="internship-cta-icon">
+            <BriefcaseBusiness size={32} />
+          </div>
+
           <span className="section-kicker">
             YOUR FUTURE STARTS HERE
           </span>
@@ -276,8 +366,12 @@ export default function InternshipsPage() {
           </p>
 
           <div className="internship-cta-actions">
-            <Link href="/contact-us" className="internship-cta-button">
+            <Link
+              href="/contact-us"
+              className="internship-cta-button"
+            >
               Contact Us
+              <ArrowRight size={17} />
             </Link>
 
             <a

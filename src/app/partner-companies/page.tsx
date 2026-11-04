@@ -1,39 +1,48 @@
 
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  Handshake,
   Building2,
-  Users,
   CheckCircle2,
-  Target,
-  Network,
+  Handshake,
+  Factory,
+  BookOpen,
+  BriefcaseBusiness,
 } from "lucide-react";
 
 const partners = [
   {
     name: "3F Industries Limited",
-    category: "Industrial Partner",
+    category: "Chocolate Company",
     description:
-      "A valued organisation in our partner network, contributing to professional collaboration and workforce opportunities.",
+      "An organisation in the chocolate industry and a valued part of our professional partner network.",
+    logo: "/images/partner-3f-industries.png",
+    icon: Factory,
   },
   {
-    name: "Guptha's Enterprises",
+    name: "Sunrise Stationery Depot",
+    category: "Stationery Company",
+    description:
+      "A stationery business and a valued partner in our growing professional network.",
+    logo: "/images/partner-sunrise.png",
+    icon: BookOpen,
+  },
+  {
+    name: "Guptas Enterprises",
     category: "Business Partner",
     description:
       "A business relationship built around coordination, professional support, and shared opportunities.",
+    logo: null,
+    icon: Building2,
   },
   {
     name: "Sri Narayana Books Company",
-    category: "Business Partner",
+    category: "Books Company",
     description:
-      "A valued partner in our growing network of business relationships.",
-  },
-  {
-    name: "Sunrise Company",
-    category: "Corporate Partner",
-    description:
-      "A partner in our professional network, supporting collaborative business relationships.",
+      "A valued business partner in our growing network of professional relationships.",
+    logo: null,
+    icon: BookOpen,
   },
 ];
 
@@ -86,35 +95,6 @@ export default function PartnerCompaniesPage() {
         </div>
       </section>
 
-      {/* INTRODUCTION */}
-      <section className="partners-intro section-container">
-        <div className="partners-intro-icon">
-          <Handshake size={34} strokeWidth={1.7} />
-        </div>
-
-        <div className="partners-intro-content">
-          <span className="section-kicker">OUR BUSINESS NETWORK</span>
-
-          <h2>
-            Strong Partnerships.
-            <span> Shared Success.</span>
-          </h2>
-
-          <p>
-            At SLNS Man Power Services Private Limited, we believe that
-            successful businesses are built through strong professional
-            relationships. Our partner network helps us understand
-            organisational requirements and connect people with suitable
-            opportunities.
-          </p>
-
-          <p>
-            We value every partnership and believe in building long-term
-            relationships through trust, coordination, and mutual growth.
-          </p>
-        </div>
-      </section>
-
       {/* PARTNER COMPANIES */}
       <section className="partners-list-section" id="our-partners">
         <div className="section-container">
@@ -131,32 +111,60 @@ export default function PartnerCompaniesPage() {
           </div>
 
           <div className="partners-grid">
-            {partners.map((partner, index) => (
-              <article className="partner-card" key={partner.name}>
-                <div className="partner-card-top">
-                  <span className="partner-number">
-                    {String(index + 1).padStart(2, "0")}
+            {partners.map((partner, index) => {
+              const PartnerIcon = partner.icon;
+
+              return (
+                <article className="partner-card" key={partner.name}>
+                  <div className="partner-card-top">
+                    <span className="partner-number">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <span className="partner-building-icon">
+                      <PartnerIcon size={24} strokeWidth={1.8} />
+                    </span>
+                  </div>
+
+                  {/* COMPANY LOGO */}
+                  <div className="partner-logo-area">
+                    {partner.logo ? (
+                      <Image
+                        src={partner.logo}
+                        alt={`${partner.name} logo`}
+                        width={200}
+                        height={100}
+                        className="partner-company-logo"
+                        style={{
+                          width: "auto",
+                          height: "auto",
+                          maxWidth: "155px",
+                          maxHeight: "82px",
+                          objectFit: "contain",
+                        }}
+                      />
+                    ) : (
+                      <div className="partner-default-logo">
+                        <PartnerIcon size={42} strokeWidth={1.5} />
+                      </div>
+                    )}
+                  </div>
+
+                  <span className="partner-category">
+                    {partner.category}
                   </span>
 
-                  <div className="partner-building-icon">
-                    <Building2 size={27} strokeWidth={1.8} />
+                  <h3>{partner.name}</h3>
+
+                  <p>{partner.description}</p>
+
+                  <div className="partner-card-footer">
+                    <span>SLNS PARTNER NETWORK</span>
+                    <CheckCircle2 size={18} />
                   </div>
-                </div>
-
-                <span className="partner-category">
-                  {partner.category}
-                </span>
-
-                <h3>{partner.name}</h3>
-
-                <p>{partner.description}</p>
-
-                <div className="partner-card-footer">
-                  <span>SLNS PARTNER NETWORK</span>
-                  <CheckCircle2 size={18} />
-                </div>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -193,7 +201,7 @@ export default function PartnerCompaniesPage() {
 
             <article className="value-card">
               <div className="value-icon">
-                <Network size={28} />
+                <BriefcaseBusiness size={28} />
               </div>
 
               <h3>Collaboration</h3>
@@ -206,7 +214,7 @@ export default function PartnerCompaniesPage() {
 
             <article className="value-card">
               <div className="value-icon">
-                <Target size={28} />
+                <Building2 size={28} />
               </div>
 
               <h3>Shared Growth</h3>
@@ -224,7 +232,7 @@ export default function PartnerCompaniesPage() {
       <section className="collaboration-section">
         <div className="section-container collaboration-content">
           <div className="collaboration-icon">
-            <Users size={34} />
+            <UsersIcon />
           </div>
 
           <span className="section-kicker">GROW WITH US</span>
@@ -252,4 +260,8 @@ export default function PartnerCompaniesPage() {
       </section>
     </main>
   );
+}
+
+function UsersIcon() {
+  return <Handshake size={34} strokeWidth={1.8} />;
 }
