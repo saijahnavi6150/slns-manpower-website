@@ -91,7 +91,7 @@ const gallery = [
       "Get familiar with professional workplace practices and teamwork.",
   },
   {
-    image: "/images/internship-learning.png",
+    image: "/images/internship-learnings.png",
     title: "Skill Development",
     description:
       "Improve technical knowledge and develop professional skills.",
